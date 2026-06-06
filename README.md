@@ -3,11 +3,13 @@
 A 3-tool LLM agent that answers questions about what's happening inside a company — combining recent Slack-style discussion memory, operational spreadsheet data, and auditable follow-up actions. Built for Assignment 2 of the LEC AI programme.
 
 ```bash
-make install    # install deps
-make ingest     # build the database from source data
-make run        # interactive clean mode
-make run-debug  # shows every tool call and result
-make eval       # runs the 20-prompt benchmark across both system prompts
+make install         # install deps
+make ingest          # build the database from source data
+make run             # interactive agent (conservative prompt — ships)
+make run-proactive   # interactive agent (proactive prompt)
+make run-debug       # shows every tool call and result
+make eval            # runs the 20-prompt benchmark across both system prompts
+make help            # list all targets
 ```
 
 ---
@@ -229,7 +231,7 @@ data/
   slack_threads.json     # 14 threads across 4 channels
   eval_prompts.json      # 20 benchmark prompts (10 happy-path, 5 ambiguous, 5 OOS)
   orders.csv / inventory.csv / suppliers.csv / customers.csv
-outputs/
+outputs/               # generated files (gitignored, created by make eval / make run)
   eval_results.json      # full per-prompt results + summary
   eval_results.csv       # flat table for quick review
   actions.jsonl          # all create_action calls logged during eval
