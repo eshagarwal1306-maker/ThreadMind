@@ -1,6 +1,8 @@
 .env
-.pycache/
 __pycache__/
+*.pyc
+*.pyo
+.pycache/
 threadmind.db
 outputs/actions.jsonl
 outputs/eval_results.json
