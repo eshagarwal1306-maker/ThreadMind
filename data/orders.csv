@@ -1,0 +1,7 @@
+order_id,customer_id,sku,quantity,due_date,status,margin_pct,priority_level
+1042,CUST-ATLAS,BRG-100,60,2026-06-07,at_risk,28.5,high
+1048,CUST-HELIOS,VAL-220,40,2026-06-08,scheduled,41.0,high
+1051,CUST-NORTHWIND,VAL-220,12,2026-06-09,scheduled,22.0,medium
+1055,CUST-LUMEN,VAL-220,8,2026-06-10,scheduled,18.0,medium
+1060,CUST-POLARIS,SNS-410,25,2026-06-12,on_track,35.0,low
+1063,CUST-KESTREL,BRG-100,15,2026-06-11,scheduled,26.0,medium

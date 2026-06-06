@@ -1,0 +1,5 @@
+sku,on_hand,incoming_qty,reserved_qty,warehouse
+BRG-100,20,40,20,north
+VAL-220,55,40,42,north
+VAL-220,18,0,10,west
+SNS-410,80,0,20,east

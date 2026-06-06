@@ -1,0 +1,7 @@
+.env
+.pycache/
+__pycache__/
+threadmind.db
+outputs/actions.jsonl
+outputs/eval_results.json
+outputs/eval_results.csv

@@ -1,0 +1,139 @@
+[
+  {
+    "thread_id": "thr_ops_001",
+    "channel": "#ops",
+    "messages": [
+      {"ts": "2026-06-02T08:15:00Z", "user": "maya", "text": "Inventory check: Atlas Robotics order 1042 is exposed if Zeta Components misses the bearing shipment again."},
+      {"ts": "2026-06-02T08:18:00Z", "user": "liam", "text": "Supplier Zeta moved expected ship date from June 3 to June 6."},
+      {"ts": "2026-06-02T08:25:00Z", "user": "maya", "text": "Decision: keep Atlas on watchlist and update customer only if delay extends past June 5."},
+      {"ts": "2026-06-02T08:30:00Z", "user": "rhea", "text": "Follow-up owner is Nina from supply chain."},
+      {"ts": "2026-06-02T08:33:00Z", "user": "nina", "text": "I own the supplier follow-up and will confirm by end of day."}
+    ]
+  },
+  {
+    "thread_id": "thr_ops_002",
+    "channel": "#ops",
+    "messages": [
+      {"ts": "2026-06-03T09:05:00Z", "user": "maya", "text": "Order 1042 looked back on track after warehouse freed 20 units from reserve."},
+      {"ts": "2026-06-03T09:10:00Z", "user": "jules", "text": "That only helps partially. We still need 40 bearings from Zeta."},
+      {"ts": "2026-06-03T09:12:00Z", "user": "maya", "text": "Noted. Leaving status as tentative, not confirmed."},
+      {"ts": "2026-06-03T09:20:00Z", "user": "nina", "text": "Supplier email still says June 6 ETA, so risk remains."}
+    ]
+  },
+  {
+    "thread_id": "thr_ops_003",
+    "channel": "#ops",
+    "messages": [
+      {"ts": "2026-06-03T14:00:00Z", "user": "jules", "text": "North warehouse cycle count found Sigma valve stock lower than system count by 18 units."},
+      {"ts": "2026-06-03T14:08:00Z", "user": "maya", "text": "Potential discrepancy affects orders 1051 and 1055."},
+      {"ts": "2026-06-03T14:15:00Z", "user": "rhea", "text": "Please validate before we escalate."},
+      {"ts": "2026-06-03T14:19:00Z", "user": "jules", "text": "I will recount tonight."}
+    ]
+  },
+  {
+    "thread_id": "thr_lead_001",
+    "channel": "#leadership",
+    "messages": [
+      {"ts": "2026-06-02T11:00:00Z", "user": "ceo_anna", "text": "We should not promise Atlas Robotics a date change until ops confirms supply."},
+      {"ts": "2026-06-02T11:05:00Z", "user": "cfo_omar", "text": "Approved. Keep communication factual and avoid offering discount yet."},
+      {"ts": "2026-06-02T11:09:00Z", "user": "vp_sales_lena", "text": "Sales will hold outbound update until Nina confirms."}
+    ]
+  },
+  {
+    "thread_id": "thr_lead_002",
+    "channel": "#leadership",
+    "messages": [
+      {"ts": "2026-06-03T10:00:00Z", "user": "ceo_anna", "text": "Decision: prioritize Helios Health order 1048 over lower-margin regional orders if inventory tightens."},
+      {"ts": "2026-06-03T10:07:00Z", "user": "ops_director_rhea", "text": "Logged. Ops will reserve available Sigma valves for 1048 first."},
+      {"ts": "2026-06-03T10:11:00Z", "user": "vp_sales_lena", "text": "Customer is strategic tier A, so that aligns."}
+    ]
+  },
+  {
+    "thread_id": "thr_sales_001",
+    "channel": "#sales",
+    "messages": [
+      {"ts": "2026-06-02T12:00:00Z", "user": "lena", "text": "Atlas Robotics asked whether shipment will leave this week."},
+      {"ts": "2026-06-02T12:05:00Z", "user": "sam", "text": "I told them we are checking with ops and would respond tomorrow."},
+      {"ts": "2026-06-02T12:12:00Z", "user": "lena", "text": "Do not confirm until supplier risk is cleared."}
+    ]
+  },
+  {
+    "thread_id": "thr_sales_002",
+    "channel": "#sales",
+    "messages": [
+      {"ts": "2026-06-03T13:20:00Z", "user": "sam", "text": "Atlas account sounds nervous and mentioned possible penalty if we slip past June 7."},
+      {"ts": "2026-06-03T13:25:00Z", "user": "lena", "text": "Customer context: they care more about certainty than speed right now."},
+      {"ts": "2026-06-03T13:31:00Z", "user": "sam", "text": "Understood. I'll avoid reassuring language until ops is firm."}
+    ]
+  },
+  {
+    "thread_id": "thr_sales_003",
+    "channel": "#sales",
+    "messages": [
+      {"ts": "2026-06-03T16:00:00Z", "user": "zoe", "text": "Helios Health requested split shipment if Sigma valves arrive short."},
+      {"ts": "2026-06-03T16:06:00Z", "user": "lena", "text": "No decision yet. Need ops feasibility view by tomorrow noon."},
+      {"ts": "2026-06-03T16:14:00Z", "user": "zoe", "text": "I'll hold customer response."}
+    ]
+  },
+  {
+    "thread_id": "thr_supply_001",
+    "channel": "#supply-chain",
+    "messages": [
+      {"ts": "2026-06-02T07:40:00Z", "user": "nina", "text": "Supplier Zeta admitted partial production stoppage on bearing line."},
+      {"ts": "2026-06-02T07:48:00Z", "user": "drew", "text": "Risk level is medium-high through June 6."},
+      {"ts": "2026-06-02T07:55:00Z", "user": "nina", "text": "They offered expedited freight if line restarts tomorrow."}
+    ]
+  },
+  {
+    "thread_id": "thr_supply_002",
+    "channel": "#supply-chain",
+    "messages": [
+      {"ts": "2026-06-03T08:10:00Z", "user": "nina", "text": "Supplier Orion confirmed Sigma valves ship June 4 as planned."},
+      {"ts": "2026-06-03T08:14:00Z", "user": "drew", "text": "Delay risk low."},
+      {"ts": "2026-06-03T08:16:00Z", "user": "nina", "text": "This supports Helios order 1048 unless cycle count issue is real."}
+    ]
+  },
+  {
+    "thread_id": "thr_supply_003",
+    "channel": "#supply-chain",
+    "messages": [
+      {"ts": "2026-06-03T17:00:00Z", "user": "nina", "text": "Atlas follow-up: Zeta has not yet sent ASN. Still expecting June 6."},
+      {"ts": "2026-06-03T17:05:00Z", "user": "maya", "text": "So no proof the shipment has moved."},
+      {"ts": "2026-06-03T17:07:00Z", "user": "nina", "text": "Correct, only verbal assurance."}
+    ]
+  },
+  {
+    "thread_id": "thr_ops_004",
+    "channel": "#ops",
+    "messages": [
+      {"ts": "2026-06-03T11:00:00Z", "user": "jules", "text": "Deadline update: recount on Sigma valves finishes by 20:00 today."},
+      {"ts": "2026-06-03T11:03:00Z", "user": "rhea", "text": "If shortage confirmed, we may need discrepancy alert."},
+      {"ts": "2026-06-03T11:06:00Z", "user": "maya", "text": "No action until recount evidence is in."}
+    ]
+  },
+  {
+    "thread_id": "thr_ops_005",
+    "channel": "#ops",
+    "messages": [
+      {"ts": "2026-06-02T15:00:00Z", "user": "maya", "text": "Ownership change: Carlos will manage Order 1055 handoff instead of Priya."},
+      {"ts": "2026-06-02T15:03:00Z", "user": "carlos", "text": "Acknowledged. I'll coordinate with warehouse west."}
+    ]
+  },
+  {
+    "thread_id": "thr_lead_003",
+    "channel": "#leadership",
+    "messages": [
+      {"ts": "2026-06-03T18:00:00Z", "user": "ceo_anna", "text": "We still have conflicting signals on Atlas. No executive escalation unless structured data shows material slip."},
+      {"ts": "2026-06-03T18:04:00Z", "user": "cfo_omar", "text": "Agreed. Need evidence, not thread noise."}
+    ]
+  },
+  {
+    "thread_id": "thr_sales_004",
+    "channel": "#sales",
+    "messages": [
+      {"ts": "2026-06-02T17:10:00Z", "user": "zoe", "text": "Random note: who keeps stealing the cold brew from the fridge?"},
+      {"ts": "2026-06-02T17:12:00Z", "user": "sam", "text": "Not me."},
+      {"ts": "2026-06-02T17:13:00Z", "user": "lena", "text": "Please open a separate channel for beverage crime."}
+    ]
+  }
+]

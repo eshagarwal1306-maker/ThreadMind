@@ -1,0 +1,7 @@
+customer_id,customer_name,strategic_tier,region
+CUST-ATLAS,Atlas Robotics,A,NA
+CUST-HELIOS,Helios Health,A,NA
+CUST-NORTHWIND,Northwind Labs,B,EU
+CUST-LUMEN,Lumen Retail,C,NA
+CUST-POLARIS,Polaris Energy,B,APAC
+CUST-KESTREL,Kestrel Dynamics,B,NA

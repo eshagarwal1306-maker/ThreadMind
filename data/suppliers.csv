@@ -1,0 +1,4 @@
+supplier_id,supplier_name,sku,expected_ship_date,delay_risk,status
+SUP-ZETA,Zeta Components,BRG-100,2026-06-06,high,delayed
+SUP-ORION,Orion Industrial,VAL-220,2026-06-04,low,on_track
+SUP-NOVA,Nova Circuits,SNS-410,2026-06-05,low,on_track

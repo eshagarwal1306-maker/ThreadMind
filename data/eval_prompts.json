@@ -1,0 +1,169 @@
+[
+  {
+    "prompt_id": "hp_01",
+    "category": "happy_path",
+    "user_prompt": "What did we decide about Supplier Zeta's delay this week?",
+    "expected_mode": "answer",
+    "expected_tools": ["search_memory"],
+    "notes": "Should retrieve the watchlist decision and supplier-delay context from memory."
+  },
+  {
+    "prompt_id": "hp_02",
+    "category": "happy_path",
+    "user_prompt": "Is Order 1042 at risk, and why?",
+    "expected_mode": "answer",
+    "expected_tools": ["search_memory", "query_structured_data"],
+    "notes": "Requires both operational records and discussion context."
+  },
+  {
+    "prompt_id": "hp_03",
+    "category": "happy_path",
+    "user_prompt": "Who owns the follow-up for the Atlas Robotics shipment?",
+    "expected_mode": "answer",
+    "expected_tools": ["search_memory"],
+    "notes": "Owner information lives in memory."
+  },
+  {
+    "prompt_id": "hp_04",
+    "category": "happy_path",
+    "user_prompt": "Summarise the most important updates from last week and tell me what to do now.",
+    "expected_mode": "answer",
+    "expected_tools": ["search_memory"],
+    "notes": "Broad recap prompt should use memory and return clear next steps."
+  },
+  {
+    "prompt_id": "hp_05",
+    "category": "happy_path",
+    "user_prompt": "Create a discrepancy alert if Slack suggests Order 1042 is improving but the records still show supplier delay.",
+    "expected_mode": "create_action",
+    "expected_tools": ["search_memory", "query_structured_data", "create_action"],
+    "notes": "Canonical stateful action case with conflicting evidence.",
+    "expected_action_type": "discrepancy_alert"
+  },
+  {
+    "prompt_id": "hp_06",
+    "category": "happy_path",
+    "user_prompt": "What is the latest supplier context for Atlas Robotics?",
+    "expected_mode": "answer",
+    "expected_tools": ["search_memory", "query_structured_data"],
+    "notes": "Should combine supplier memory with current order context."
+  },
+  {
+    "prompt_id": "hp_07",
+    "category": "happy_path",
+    "user_prompt": "Which customer was prioritised if inventory tightens, and why?",
+    "expected_mode": "answer",
+    "expected_tools": ["search_memory", "query_structured_data"],
+    "notes": "Needs leadership decision plus customer tier from structured data."
+  },
+  {
+    "prompt_id": "hp_08",
+    "category": "happy_path",
+    "user_prompt": "Do we have enough Sigma valves for Helios Health order 1048?",
+    "expected_mode": "answer",
+    "expected_tools": ["search_memory", "query_structured_data"],
+    "notes": "Should mention inventory support and cycle-count uncertainty."
+  },
+  {
+    "prompt_id": "hp_09",
+    "category": "happy_path",
+    "user_prompt": "Who now owns Order 1055 handoff?",
+    "expected_mode": "answer",
+    "expected_tools": ["search_memory"],
+    "notes": "Ownership change memory only."
+  },
+  {
+    "prompt_id": "hp_10",
+    "category": "happy_path",
+    "user_prompt": "Should sales promise Atlas Robotics that shipment leaves this week?",
+    "expected_mode": "answer",
+    "expected_tools": ["search_memory", "query_structured_data"],
+    "notes": "Should be cautious and grounded, not reassuring."
+  },
+  {
+    "prompt_id": "amb_01",
+    "category": "ambiguous",
+    "user_prompt": "Did leadership approve it?",
+    "expected_mode": "ask_clarification",
+    "expected_tools": [],
+    "notes": "Missing referent.",
+    "acceptable_modes": ["ask_clarification"]
+  },
+  {
+    "prompt_id": "amb_02",
+    "category": "ambiguous",
+    "user_prompt": "Can you escalate this issue?",
+    "expected_mode": "ask_clarification",
+    "expected_tools": [],
+    "notes": "Issue unspecified. Should not create an action immediately.",
+    "acceptable_modes": ["ask_clarification"]
+  },
+  {
+    "prompt_id": "amb_03",
+    "category": "ambiguous",
+    "user_prompt": "What's the latest status?",
+    "expected_mode": "ask_clarification",
+    "expected_tools": [],
+    "notes": "No subject given.",
+    "acceptable_modes": ["ask_clarification"]
+  },
+  {
+    "prompt_id": "amb_04",
+    "category": "ambiguous",
+    "user_prompt": "Did we fix the supplier problem?",
+    "expected_mode": "ask_clarification",
+    "expected_tools": ["search_memory"],
+    "notes": "Acceptable to search memory first, but should still avoid overcommitting.",
+    "acceptable_modes": ["ask_clarification", "answer"]
+  },
+  {
+    "prompt_id": "amb_05",
+    "category": "ambiguous",
+    "user_prompt": "Should I tell the customer we're good?",
+    "expected_mode": "ask_clarification",
+    "expected_tools": [],
+    "notes": "Missing customer and issue.",
+    "acceptable_modes": ["ask_clarification"]
+  },
+  {
+    "prompt_id": "oos_01",
+    "category": "out_of_scope",
+    "user_prompt": "Draft an employment contract for a new hire.",
+    "expected_mode": "out_of_scope",
+    "expected_tools": [],
+    "notes": "Legal drafting is outside scope."
+  },
+  {
+    "prompt_id": "oos_02",
+    "category": "out_of_scope",
+    "user_prompt": "What's our office wifi password?",
+    "expected_mode": "out_of_scope",
+    "expected_tools": [],
+    "notes": "Not in available data."
+  },
+  {
+    "prompt_id": "oos_03",
+    "category": "out_of_scope",
+    "user_prompt": "Write code for a new Slack bot.",
+    "expected_mode": "out_of_scope",
+    "expected_tools": [],
+    "notes": "Engineering build request is outside this assistant's product scope."
+  },
+  {
+    "prompt_id": "oos_04",
+    "category": "out_of_scope",
+    "user_prompt": "Should we acquire a robotics company next quarter?",
+    "expected_mode": "out_of_scope",
+    "expected_tools": [],
+    "notes": "Strategic advice outside the available evidence."
+  },
+  {
+    "prompt_id": "oos_05",
+    "category": "out_of_scope",
+    "user_prompt": "Summarise the #marketing channel from yesterday.",
+    "expected_mode": "out_of_scope",
+    "expected_tools": ["search_memory"],
+    "notes": "Known missing channel. The assistant should not invent a summary.",
+    "acceptable_modes": ["out_of_scope", "ask_clarification"]
+  }
+]
