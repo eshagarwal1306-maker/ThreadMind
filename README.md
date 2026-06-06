@@ -199,17 +199,19 @@ Tool accuracy was 0.60 (proactive) and 0.50 (conservative). Some of this is real
 
 ## What I'd do with another week
 
-In priority order, based on what the eval actually showed:
+In priority order, based on what the eval actually showed and where this product could actually go:
 
 **1. Code-level confidence gate before `create_action`.** The `amb_02` failure is not fixable with prompt changes — the eval proved that. The fix is a guard in `agent.py` before any `create_action` tool call executes: check whether the original user prompt contains a named entity or explicit action target, and whether any prior conversation turn confirmed intent. If neither condition holds, intercept and return `ask_clarification`. One condition. Highest leverage.
 
-**2. Test a third prompt variant: clarification-first.** Right now we can only say "prompt-only doesn't work." We don't know how much clarification behaviour is achievable with the right prompt vs the right architecture. A third variant, combined with the confidence gate, would let us measure the contribution of each. That's the experiment this eval set up but didn't finish.
+**2. Vercel AI SDK for provider-agnostic LLM calls.** Right now the agent is hard-coupled to OpenAI. Vercel AI SDK gives a standardised interface across GPT, Claude, Gemini, and open-source models so you can swap providers without touching agent logic. For an eval harness this matters: you'd want to run the same 20 prompts across multiple models and compare, not just across prompt variants.
 
-**3. Re-annotate `expected_tools` with required vs acceptable.** The current labels are too strict in several places. Fixing them would give a more honest tool accuracy signal and make future eval runs more meaningful.
+**3. Multi-agent orchestration.** The single-agent architecture hits a ceiling fast. The natural evolution is a master orchestrator that routes to specialist agents — one for memory retrieval, one for structured data queries, one for action management — each with their own reasoning about which tools to call. Rather than one model doing everything, you get a network where each agent is optimised for its slice. The orchestrator decides which agent handles the query, those agents run in parallel where possible, and results are synthesised. This is closer to how a real ops team works: different people own different knowledge, a coordinator routes the question.
 
-**4. Increase token limits more carefully.** The proactive `hp_05` failure (the canonical stateful action prompt) was caused by a 220-token completion limit being too tight for the complex `create_action` JSON. It's now fixed at 400 tokens, but the right solution is adaptive — detect a truncated response and retry with a higher limit rather than setting a fixed ceiling.
+**4. Connect `create_action` to real systems.** Right now actions log to SQLite and a flat file. The obvious next step is a Linear or Jira integration — one API call turns a logged action into a real ticket with the right owner, priority, and context already filled in. The action schema is already structured for this; it just needs the outbound connector.
 
-What I wouldn't do: add more tools or more data. The interesting problems are in ambiguous-intent handling and eval design, not surface area.
+**5. Expand the ingestion layer.** Currently the corpus is Slack. The memory layer should ingest from wherever decisions actually happen: meeting transcripts from Fireflies or Fathom, email threads, WhatsApp Business conversations, Notion docs. Each source has different structure and signal quality, but the memory extraction step (summarise → embed → store) is the same regardless of source. Add source connectors, not new agent logic.
+
+**6. Reduce admin overhead as the end goal.** The thing this points toward is not a smarter chatbot — it's a workflow that runs continuously, ingests from all the places decisions happen, surfaces the right context at the right time, and creates actions without anyone having to think about it. The bottleneck in most ops teams isn't information access, it's the admin cost of tracking what was decided, who owns it, and whether it happened. An agent that reduces that overhead — by doing the tracking automatically — is worth building properly.
 
 ---
 
